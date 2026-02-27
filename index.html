@@ -3,207 +3,480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Support Small Business</title>
-
+<title>Support Small Business | Grow Your Business Online</title>
+<meta name="description" content="Helping local small businesses in Bharatpur go online with websites, digital promotion, and branding — affordable and professional.">
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-color:#333;
-background:#f5f7fb;
+:root{
+  --orange:#e65100;
+  --orange2:#f57c00;
+  --orange3:#ff9800;
+  --navy:#0f172a;
+  --dark:#1a2332;
+  --white:#fff;
+  --gray:#64748b;
+  --light:#fff8f4;
+  --text:#1a2332;
 }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
 
-/* Navbar */
-.navbar{
-background:#fff;
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(15,23,42,0.97);backdrop-filter:blur(10px);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:38px;height:38px;background:var(--orange2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.logo-name{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.1rem;color:white;line-height:1.2;}
+.logo-name span{color:var(--orange3);}
+.nav-links{display:flex;gap:22px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--orange3);}
+.nav-btn{background:var(--orange2);color:white!important;padding:9px 20px;border-radius:8px;font-weight:700!important;}
+.nav-btn:hover{background:var(--orange)!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:white;border-radius:2px;}
 
-.navbar h2{
-color:#0a2540;
-margin:0;
-}
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:110px 5% 70px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-150px;right:-100px;width:550px;height:550px;background:radial-gradient(circle,rgba(245,124,0,0.2),transparent 70%);border-radius:50%;}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(230,81,0,0.1),transparent 70%);border-radius:50%;}
+.hero-inner{position:relative;z-index:1;max-width:700px;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,0.15);border:1px solid rgba(245,124,0,0.35);color:var(--orange3);padding:7px 15px;border-radius:30px;font-size:0.78rem;font-weight:600;letter-spacing:0.5px;margin-bottom:24px;animation:fadeUp 0.6s ease both;}
+.hero h1{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;color:white;line-height:1.1;margin-bottom:18px;animation:fadeUp 0.7s 0.1s ease both;}
+.hero h1 em{color:var(--orange3);font-style:normal;}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:32px;max-width:520px;animation:fadeUp 0.7s 0.2s ease both;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;}
+.btn-orange{background:var(--orange2);color:white;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:all 0.25s;box-shadow:0 8px 24px rgba(245,124,0,0.35);display:inline-flex;align-items:center;gap:7px;}
+.btn-orange:hover{background:var(--orange);transform:translateY(-2px);}
+.btn-wa{background:#25d366;color:white;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:all 0.25s;display:inline-flex;align-items:center;gap:7px;box-shadow:0 8px 24px rgba(37,211,102,0.3);}
+.btn-wa:hover{background:#1ebe5d;transform:translateY(-2px);}
+.btn-outline-w{border:1.5px solid rgba(255,255,255,0.2);color:white;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:500;font-size:0.95rem;transition:all 0.25s;}
+.btn-outline-w:hover{border-color:var(--orange3);background:rgba(245,124,0,0.1);}
+.hero-stats{display:flex;gap:44px;margin-top:52px;flex-wrap:wrap;animation:fadeUp 0.7s 0.4s ease both;}
+.stat-n{font-family:'Cabinet Grotesk',sans-serif;font-size:1.9rem;font-weight:800;color:white;}
+.stat-n em{color:var(--orange3);font-style:normal;}
+.stat-l{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:3px;}
 
-.navbar a{
-text-decoration:none;
-color:#0a2540;
-margin-left:20px;
-font-weight:500;
-}
+/* SECTION COMMON */
+section{padding:80px 5%;}
+.sec-tag{display:inline-block;background:rgba(245,124,0,0.1);color:var(--orange2);font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:12px;}
+.sec-title{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:var(--text);margin-bottom:10px;line-height:1.2;}
+.sec-sub{color:var(--gray);font-size:1rem;max-width:520px;line-height:1.7;margin-bottom:44px;}
 
-/* Hero */
-.hero{
-background:linear-gradient(135deg,#6a11cb,#2575fc);
-color:white;
-text-align:center;
-padding:100px 20px;
-}
+/* WHY ONLINE */
+#why{background:var(--light);}
+.why-grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.why-card{background:white;border-radius:16px;padding:26px;text-align:center;border:1.5px solid transparent;transition:all 0.3s;}
+.why-card:hover{border-color:rgba(245,124,0,0.2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(245,124,0,0.1);}
+.why-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 16px;}
+.wi1{background:rgba(245,124,0,0.1);}
+.wi2{background:rgba(21,101,192,0.1);}
+.wi3{background:rgba(46,125,50,0.1);}
+.wi4{background:rgba(239,68,68,0.1);}
+.wi5{background:rgba(139,92,246,0.1);}
+.wi6{background:rgba(20,184,166,0.1);}
+.why-card h3{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;margin-bottom:8px;font-size:1rem;color:var(--text);}
+.why-card p{font-size:0.84rem;color:var(--gray);line-height:1.6;}
 
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
+/* SERVICES */
+#services{background:white;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;}
+.svc-card{background:var(--light);border-radius:18px;padding:30px;border:1.5px solid transparent;transition:all 0.3s;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;top:0;right:0;width:0;height:4px;background:linear-gradient(90deg,var(--orange3),var(--orange));transition:width 0.3s;}
+.svc-card:hover{border-color:rgba(245,124,0,0.2);transform:translateY(-4px);box-shadow:0 20px 50px rgba(245,124,0,0.1);background:white;}
+.svc-card:hover::before{width:100%;}
+.svc-icon{font-size:2.2rem;margin-bottom:16px;}
+.svc-card h3{font-family:'Cabinet Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+.svc-card p{font-size:0.88rem;color:var(--gray);line-height:1.6;margin-bottom:16px;}
+.svc-price{font-weight:700;color:var(--orange2);font-size:0.9rem;}
+.svc-cta{display:inline-flex;align-items:center;gap:5px;color:var(--orange2);font-size:0.85rem;font-weight:600;text-decoration:none;margin-top:12px;transition:gap 0.2s;}
+.svc-cta:hover{gap:9px;}
 
-.hero p{
-font-size:18px;
-margin-bottom:25px;
-}
+/* HOW IT WORKS */
+#process{background:var(--light);}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.proc-step{text-align:center;padding:28px 18px;border-radius:16px;transition:background 0.3s;}
+.proc-step:hover{background:white;box-shadow:0 10px 30px rgba(245,124,0,0.08);}
+.step-num{width:54px;height:54px;background:var(--orange2);color:white;font-family:'Cabinet Grotesk',sans-serif;font-size:1.3rem;font-weight:800;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.proc-step h3{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;margin-bottom:8px;font-size:1rem;}
+.proc-step p{font-size:0.86rem;color:var(--gray);line-height:1.6;}
 
-.btn{
-background:white;
-color:#2575fc;
-padding:12px 25px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-}
+/* BUSINESSES HELPED */
+#businesses{background:var(--navy);}
+.biz-inner{max-width:960px;margin:auto;}
+.biz-inner .sec-tag{background:rgba(245,124,0,0.15);color:var(--orange3);}
+.biz-inner .sec-title{color:white;}
+.biz-inner .sec-sub{color:rgba(255,255,255,0.6);}
+.biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;}
+.biz-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;text-align:center;transition:all 0.3s;}
+.biz-card:hover{background:rgba(245,124,0,0.1);border-color:rgba(245,124,0,0.3);transform:translateY(-3px);}
+.biz-icon{font-size:2rem;margin-bottom:12px;}
+.biz-card h3{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;color:white;font-size:0.95rem;margin-bottom:6px;}
+.biz-card p{font-size:0.82rem;color:rgba(255,255,255,0.55);}
 
-/* Sections */
-.section{
-padding:70px 20px;
-text-align:center;
-}
+/* TESTIMONIALS */
+#testimonials{background:var(--light);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+.testi-card{background:white;border-radius:16px;padding:26px;border:1.5px solid rgba(245,124,0,0.08);transition:box-shadow 0.3s;}
+.testi-card:hover{box-shadow:0 12px 40px rgba(245,124,0,0.1);}
+.stars{color:var(--orange3);font-size:0.95rem;margin-bottom:12px;}
+.testi-card>p{font-size:0.9rem;color:#374151;line-height:1.7;margin-bottom:18px;font-style:italic;}
+.reviewer{display:flex;align-items:center;gap:12px;}
+.r-av{width:40px;height:40px;border-radius:50%;background:var(--orange2);display:flex;align-items:center;justify-content:center;color:white;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.95rem;}
+.r-name{font-weight:700;font-size:0.88rem;color:var(--text);}
+.r-role{font-size:0.75rem;color:var(--gray);}
 
-.section h2{
-color:#0a2540;
-margin-bottom:30px;
-}
+/* CTA BANNER */
+.cta-banner{background:var(--orange);border-radius:22px;padding:65px 55px;text-align:center;margin:0 5% 80px;position:relative;overflow:hidden;}
+.cta-banner::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(255,255,255,0.15),transparent 70%);border-radius:50%;}
+.cta-banner h2{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:white;margin-bottom:12px;position:relative;}
+.cta-banner>p{color:rgba(255,255,255,0.8);font-size:1rem;margin-bottom:32px;position:relative;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;}
+.btn-white{background:white;color:var(--orange);padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:all 0.25s;display:inline-flex;align-items:center;gap:7px;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.15);}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.4);color:white;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:500;font-size:0.95rem;transition:all 0.25s;display:inline-flex;align-items:center;gap:7px;}
+.btn-ghost:hover{background:rgba(255,255,255,0.15);}
 
-/* Services */
-.grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-max-width:1000px;
-margin:auto;
-}
+/* CONTACT */
+#contact{background:white;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:50px;align-items:start;}
+.contact-info h3{font-family:'Cabinet Grotesk',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:12px;}
+.contact-info>p{color:var(--gray);line-height:1.7;margin-bottom:26px;}
+.c-methods{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.c-method{display:flex;align-items:center;gap:11px;text-decoration:none;color:white;padding:13px 14px;border-radius:12px;font-weight:600;font-size:0.85rem;transition:all 0.25s;box-shadow:0 3px 12px rgba(0,0,0,0.1);}
+.c-method:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.c-method i{font-size:1.1rem;flex-shrink:0;}
+.cm-wa{background:linear-gradient(135deg,#25d366,#128c50);}
+.cm-call{background:linear-gradient(135deg,var(--orange2),var(--orange));}
+.cm-insta{background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);}
+.cm-fb{background:linear-gradient(135deg,#1877f2,#0d5cbf);}
+.c-form{display:flex;flex-direction:column;gap:14px;}
+.c-form input,.c-form select,.c-form textarea{padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.92rem;outline:none;transition:border-color 0.2s;background:white;}
+.c-form input:focus,.c-form select:focus,.c-form textarea:focus{border-color:var(--orange2);}
+.c-form textarea{min-height:110px;resize:vertical;}
+.c-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.c-submit{background:var(--orange2);color:white;border:none;padding:14px;border-radius:10px;font-family:'Cabinet Grotesk',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.25s;box-shadow:0 8px 24px rgba(245,124,0,0.35);}
+.c-submit:hover{background:var(--orange);transform:translateY(-1px);}
 
-.card{
-background:white;
-padding:25px;
-margin:15px;
-width:260px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:40px 5% 24px;}
+.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:22px;}
+.ft-brand>p{font-size:0.86rem;margin-top:10px;max-width:230px;line-height:1.6;}
+.ft-logo{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.2rem;color:white;}
+.ft-logo em{color:var(--orange3);font-style:normal;}
+.ft-col h4{font-family:'Cabinet Grotesk',sans-serif;color:white;font-weight:700;margin-bottom:12px;font-size:0.88rem;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.ft-col a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
+.ft-col a:hover{color:var(--orange3);}
+.ft-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:0.8rem;}
+.ft-bottom a{color:rgba(255,255,255,0.5);text-decoration:none;}
+.ft-bottom a:hover{color:white;}
 
-/* About */
-.about{
-max-width:800px;
-margin:auto;
-font-size:17px;
-line-height:1.6;
-}
-
-/* Contact */
-.contact-card{
-background:white;
-padding:25px;
-border-radius:10px;
-width:280px;
-margin:auto;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.contact-btn{
-display:inline-block;
-margin-top:10px;
-padding:10px 18px;
-background:#E1306C;
-color:white;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-}
-
-/* Footer */
-footer{
-background:#0a2540;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:50px;
+/* FLOAT */
+.float-btns{position:fixed;right:18px;bottom:28px;display:flex;flex-direction:column;gap:10px;z-index:998;}
+.fb{display:flex;align-items:center;gap:9px;padding:11px 15px 11px 12px;border-radius:50px;color:white;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:all 0.3s;overflow:hidden;max-width:50px;white-space:nowrap;}
+.fb:hover{max-width:180px;transform:translateY(-2px);}
+.fb i{font-size:1.15rem;flex-shrink:0;width:22px;text-align:center;}
+.fb .fl{font-size:0.8rem;font-weight:600;opacity:0;transition:opacity 0.15s 0.07s;}
+.fb:hover .fl{opacity:1;}
+.fb-wa{background:#25d366;}
+.fb-call{background:var(--orange2);}
+.scroll-top{position:fixed;right:18px;bottom:188px;width:40px;height:40px;border-radius:50%;background:var(--navy);border:1.5px solid rgba(245,124,0,0.4);color:white;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.85rem;z-index:997;opacity:0;transition:all 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+.scroll-top.show{opacity:1;}
+.scroll-top:hover{background:var(--orange2);}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.6s,transform 0.6s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:20px 5%;gap:14px;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+  .contact-grid{grid-template-columns:1fr;}
+  .c-methods,.c-form-row{grid-template-columns:1fr;}
+  .footer-top{flex-direction:column;}
+  .cta-banner{padding:44px 26px;margin:0 4% 60px;}
+  .fb .fl{display:none;} .fb{max-width:50px!important;}
 }
 </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<div class="navbar">
-<h2>Support Small Business</h2>
-<div>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-icon">🏪</div>
+    <span class="logo-name"><span>Support</span> Small<br>Business</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#why">Why Online</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#businesses">Industries</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/919xxxxxxx40?text=Hi!%20I%20want%20to%20take%20my%20business%20online." target="_blank" class="nav-btn">Get Started</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleNav()" aria-label="menu"><span></span><span></span><span></span></button>
+</nav>
 
-<!-- Hero -->
-<section class="hero">
-<h1>Grow Your Business Online</h1>
-<p>Helping small businesses get more reach, followers and customers through social media promotion.</p>
-<a href="#contact" class="btn">Get Promotion</a>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-tag">🚀 Helping Bharatpur Businesses Grow Online</div>
+    <h1>Your Local Business Deserves a <em>Professional Website</em></h1>
+    <p>We help small businesses, shops, and local entrepreneurs in Bharatpur go online — affordable, fast, and professional. More customers, more trust, more growth.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-orange"><i class="fas fa-rocket"></i> Take My Business Online</a>
+      <a href="https://wa.me/919xxxxxxxxx40?text=Hi!%20I%20want%20to%20take%20my%20business%20online." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+      <a href="#services" class="btn-outline-w">See Services</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n" id="bs1">0<em>+</em></div><div class="stat-l">Businesses Helped</div></div>
+      <div><div class="stat-n" id="bs2">0<em>%</em></div><div class="stat-l">Client Satisfaction</div></div>
+      <div><div class="stat-n">₹5k<em>+</em></div><div class="stat-l">Starting Price</div></div>
+    </div>
+  </div>
 </section>
 
-<!-- Services -->
-<section id="services" class="section">
-<h2>Our Services</h2>
-
-<div class="grid">
-<div class="card">
-<h3>Instagram Promotion</h3>
-<p>Increase followers and engagement for your business profile.</p>
-</div>
-
-<div class="card">
-<h3>Business Shoutouts</h3>
-<p>Promote your business to a targeted audience.</p>
-</div>
-
-<div class="card">
-<h3>Brand Growth</h3>
-<p>Build your brand presence and reach more customers.</p>
-</div>
-
-<div class="card">
-<h3>Story Promotion</h3>
-<p>Promote your products and services through story features.</p>
-</div>
-</div>
+<!-- WHY ONLINE -->
+<section id="why">
+  <div class="sec-tag">Why Go Online?</div>
+  <div class="sec-title">Your Customers Are Already Online</div>
+  <p class="sec-sub">97% of people search for local businesses online before visiting. Without a website, you're invisible to them.</p>
+  <div class="why-grid-3 reveal">
+    <div class="why-card"><div class="why-icon wi1">🌍</div><h3>Reach More Customers</h3><p>Be found by thousands of potential customers searching for your service online.</p></div>
+    <div class="why-card"><div class="why-icon wi2">🏆</div><h3>Build Trust & Credibility</h3><p>A professional website instantly makes your business look established and trustworthy.</p></div>
+    <div class="why-card"><div class="why-icon wi3">📞</div><h3>Get More Enquiries</h3><p>Customers can contact you 24/7 through your website — even while you sleep.</p></div>
+    <div class="why-card"><div class="why-icon wi4">💰</div><h3>Increase Your Revenue</h3><p>More online visibility = more customers = more sales and revenue for your business.</p></div>
+    <div class="why-card"><div class="why-icon wi5">📱</div><h3>Mobile Accessible</h3><p>Your website works on all phones — most customers search on mobile phones.</p></div>
+    <div class="why-card"><div class="why-icon wi6">📊</div><h3>Beat Competitors</h3><p>Most local businesses don't have a good website yet — be ahead of them now.</p></div>
+  </div>
 </section>
 
-<!-- About -->
-<section id="about" class="section">
-<h2>About Us</h2>
-<div class="about">
-Support Small Business helps startups and local businesses grow through social media marketing and promotions.  
-Our goal is to give small businesses the exposure they need to reach more customers and grow faster.
-</div>
+<!-- SERVICES -->
+<section id="services" style="background:var(--light);">
+  <div class="sec-tag">What We Offer</div>
+  <div class="sec-title">Complete Digital Solutions for Your Business</div>
+  <p class="sec-sub">Everything your business needs to grow online — all under one roof.</p>
+  <div class="services-grid reveal">
+    <div class="svc-card">
+      <div class="svc-icon">🌐</div>
+      <h3>Business Website</h3>
+      <p>Professional, mobile-friendly website with your services, contact info, gallery, and inquiry form. Customers can find and trust you online.</p>
+      <div class="svc-price">Starting ₹8,000</div>
+      <a href="https://wa.me/919xxxxxxx240?text=Hi!%20I%20need%20a%20Business%20Website." target="_blank" class="svc-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📣</div>
+      <h3>Digital Promotion</h3>
+      <p>Social media posts, WhatsApp marketing, and local online promotion to get more customers for your business fast.</p>
+      <div class="svc-price">Starting ₹3,000/month</div>
+      <a href="https://wa.me/919xxxxxxxx40?text=Hi!%20I%20need%20Digital%20Promotion." target="_blank" class="svc-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🗺️</div>
+      <h3>Business Listing</h3>
+      <p>Get your business listed on Google Maps, Justdial, and other directories so local customers can find you easily.</p>
+      <div class="svc-price">Starting ₹1,500</div>
+      <a href="https://wa.me/919xxxxxxx240?text=Hi!%20I%20need%20Business%20Listing." target="_blank" class="svc-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🎨</div>
+      <h3>Online Branding</h3>
+      <p>Logo design, business card, letterhead, and a complete brand identity that makes your business look professional everywhere.</p>
+      <div class="svc-price">Starting ₹2,500</div>
+      <a href="https://wa.me/919xxxxxxxx0?text=Hi!%20I%20need%20Online%20Branding." target="_blank" class="svc-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📱</div>
+      <h3>WhatsApp Business Setup</h3>
+      <p>Set up WhatsApp Business with catalog, auto-replies, and professional profile — convert more enquiries to sales.</p>
+      <div class="svc-price">Starting ₹999</div>
+      <a href="https://wa.me/919xxxxxxxx40?text=Hi!%20I%20need%20WhatsApp%20Business%20Setup." target="_blank" class="svc-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📸</div>
+      <h3>Social Media Management</h3>
+      <p>Regular posts, stories, and content for Instagram and Facebook to build your following and attract more customers.</p>
+      <div class="svc-price">Starting ₹2,500/month</div>
+      <a href="https://wa.me/919xxxxxxx40?text=Hi!%20I%20need%20Social%20Media%20Management." target="_blank" class="svc-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="section">
-<h2>Contact Us</h2>
-
-<div class="contact-card">
-<h3>Instagram</h3>
-<p>@support_smalll_business</p>
-<a href="https://www.instagram.com/support_smalll_business" target="_blank" class="contact-btn">
-Message on Instagram
-</a>
-</div>
-
+<!-- HOW IT WORKS -->
+<section id="process">
+  <div style="text-align:center;max-width:520px;margin:0 auto 50px;">
+    <div class="sec-tag">How It Works</div>
+    <div class="sec-title">Go Online in Just 4 Easy Steps</div>
+    <p class="sec-sub" style="margin:0 auto;">Simple, fast, and hassle-free process — we handle everything for you.</p>
+  </div>
+  <div class="process-steps reveal">
+    <div class="proc-step"><div class="step-num">1</div><h3>Free Consultation</h3><p>Tell us about your business, your goals, and what you need. Completely free!</p></div>
+    <div class="proc-step"><div class="step-num">2</div><h3>Custom Design</h3><p>We design your website or content tailored to your specific business and customers.</p></div>
+    <div class="proc-step"><div class="step-num">3</div><h3>Review & Approve</h3><p>You review the work, suggest changes, and we finalize everything to your satisfaction.</p></div>
+    <div class="proc-step"><div class="step-num">4</div><h3>Go Live! 🚀</h3><p>Your business goes online in days. We also provide support after delivery!</p></div>
+  </div>
 </section>
 
+<!-- WHO WE HELP -->
+<section id="businesses">
+  <div class="biz-inner">
+    <div class="sec-tag">Industries We Serve</div>
+    <div class="sec-title">We Help All Types of Businesses</div>
+    <p class="sec-sub">From small shops to large businesses — any business can benefit from going online.</p>
+    <div class="biz-grid reveal">
+      <div class="biz-card"><div class="biz-icon">🛒</div><h3>Retail Shops</h3><p>Clothing, electronics, grocery</p></div>
+      <div class="biz-card"><div class="biz-icon">🍽️</div><h3>Restaurants & Dhabas</h3><p>Menu, orders, location</p></div>
+      <div class="biz-card"><div class="biz-icon">🏥</div><h3>Clinics & Hospitals</h3><p>Doctor info, appointments</p></div>
+      <div class="biz-card"><div class="biz-icon">🎓</div><h3>Coaching Institutes</h3><p>Courses, results, admissions</p></div>
+      <div class="biz-card"><div class="biz-icon">🏨</div><h3>Hotels & Stays</h3><p>Rooms, booking, gallery</p></div>
+      <div class="biz-card"><div class="biz-icon">🔧</div><h3>Service Providers</h3><p>Plumber, electrician, AC repair</p></div>
+      <div class="biz-card"><div class="biz-icon">💄</div><h3>Beauty & Salon</h3><p>Services, pricing, booking</p></div>
+      <div class="biz-card"><div class="biz-icon">🏗️</div><h3>Real Estate</h3><p>Properties, listings, contact</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="background:var(--light);">
+  <div class="sec-tag">Success Stories</div>
+  <div class="sec-title">Businesses That Went Online</div>
+  <p class="sec-sub">Real results from real Bharatpur businesses.</p>
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Meri kapde ki dukaan ke liye website banwayi. Ab Bharatpur ke bahar se bhi customers WhatsApp pe order karte hain. Business double ho gaya!"</p>
+      <div class="reviewer"><div class="r-av">M</div><div><div class="r-name">Mohammad Rafiq</div><div class="r-role">Cloth Shop Owner, Bharatpur</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Google pe mera restaurant pehle dikhai nahi deta tha. TK Web Solutions ne listing aur website dono karwaye. Ab roz naye customers aate hain."</p>
+      <div class="reviewer"><div class="r-av">S</div><div><div class="r-name">Sunil Sharma</div><div class="r-role">Restaurant Owner, Bharatpur</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"AC repair ka kaam karta hun. Website banayi toh Google pe aane laga. Ab teen naye helpers rakhne pad gaye itna kaam badh gaya!"</p>
+      <div class="reviewer"><div class="r-av">R</div><div><div class="r-name">Ravi Kumar</div><div class="r-role">AC Repair Service, Bharatpur</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready to Take Your Business Online?</h2>
+  <p>Get a free consultation today — no payment needed. Let's grow your business together!</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/919079368240?text=Hi!%20I%20want%20to%20take%20my%20business%20online." target="_blank" class="btn-white"><i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp Us Now</a>
+    <a href="tel:+919079368240" class="btn-ghost"><i class="fas fa-phone"></i> Call: 9079368240</a>
+    <a href="#contact" class="btn-ghost"><i class="fas fa-rocket"></i> Get Free Demo</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-tag">Get Started</div>
+  <div class="sec-title">Talk to Us — It's Free!</div>
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+      <h3>Contact Us Today</h3>
+      <p>Tell us about your business and we'll suggest the best solution. Free consultation, no commitment!</p>
+      <div class="c-methods">
+        <a href="https://wa.me/919079368240?text=Hi!%20I%20want%20to%20take%20my%20business%20online." target="_blank" class="c-method cm-wa"><i class="fab fa-whatsapp"></i><span>WhatsApp Us</span></a>
+        <a href="tel:+919079368240" class="c-method cm-call"><i class="fas fa-phone"></i><span>Call: 9079368240</span></a>
+        <a href="https://www.instagram.com/tkwebsolutions_official" target="_blank" class="c-method cm-insta"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+        <a href="https://www.facebook.com/profile.php?id=61586888301761" target="_blank" class="c-method cm-fb"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+      </div>
+    </div>
+    <div>
+      <form class="c-form" onsubmit="submitForm(event,'biz')">
+        <div class="c-form-row">
+          <input type="text" name="name" placeholder="Your Name *" required>
+          <input type="tel" name="phone" placeholder="Phone Number *" required>
+        </div>
+        <input type="text" name="business" placeholder="Business Name / Type">
+        <select name="service">
+          <option value="">What do you need?</option>
+          <option>Business Website</option>
+          <option>Digital Promotion</option>
+          <option>Business Listing (Google Maps)</option>
+          <option>Online Branding / Logo</option>
+          <option>WhatsApp Business Setup</option>
+          <option>Social Media Management</option>
+          <option>Full Package (Everything)</option>
+        </select>
+        <textarea name="message" placeholder="Tell us about your business and what you're looking for..."></textarea>
+        <button type="submit" class="c-submit" id="biz-btn">Get Free Consultation 🚀</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-© 2026 Support Small Business
+  <div class="footer-top">
+    <div class="ft-brand">
+      <div class="ft-logo">🏪 <em>Support</em> Small Business</div>
+      <p>Helping local businesses in Bharatpur grow online with affordable digital solutions.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Business Website</a></li>
+        <li><a href="#services">Digital Promotion</a></li>
+        <li><a href="#services">Business Listing</a></li>
+        <li><a href="#services">Online Branding</a></li>
+        <li><a href="#services">Social Media</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#why">Why Go Online</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#businesses">Industries</a></li>
+        <li><a href="#testimonials">Success Stories</a></li>
+        <li><a href="#contact">Free Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2026 Support Small Business. All rights reserved.</p>
+    <p>Demo Website by <a href="https://tarunsinghgunesh.github.io/TK-Web-Solutions/" target="_blank">TK Web Solutions</a></p>
+  </div>
 </footer>
 
+<!-- FLOAT -->
+<div class="float-btns">
+  <a href="https://wa.me/919079368240?text=Hi!%20I%20want%20to%20take%20my%20business%20online." target="_blank" class="fb fb-wa"><i class="fab fa-whatsapp"></i><span class="fl">WhatsApp Us</span></a>
+  <a href="tel:+9190xxxxxxx0" class="fb fb-call"><i class="fas fa-phone"></i><span class="fl">Call Now</span></a>
+</div>
+<a href="#home" class="scroll-top" id="st"><i class="fas fa-chevron-up"></i></a>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.boxShadow=window.scrollY>30?'0 4px 20px rgba(0,0,0,0.3)':'none';
+  document.getElementById('st').classList.toggle('show',window.scrollY>400);
+});
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+let cnt=false;
+const so=new IntersectionObserver(e=>{if(e[0].isIntersecting&&!cnt){cnt=true;counter('bs1',20,'+');counter('bs2',100,'%');}},{threshold:0.5});
+so.observe(document.querySelector('.hero-stats'));
+function counter(id,target,suf){let c=0;const t=setInterval(()=>{c=Math.min(c+Math.ceil(target/50),target);document.getElementById(id).innerHTML=c+'<em>'+suf+'</em>';if(c>=target)clearInterval(t);},30);}
+async function submitForm(e,id){
+  e.preventDefault();
+  const btn=document.getElementById(id+'-btn');
+  btn.textContent='Sending...'; btn.disabled=true;
+  const fd=new FormData(e.target);
+  const name=fd.get('name')||''; const phone=fd.get('phone')||''; const biz=fd.get('business')||''; const svc=fd.get('service')||'';
+  const msg=`Hi! New enquiry from Support Small Business website:%0AName: ${name}%0APhone: ${phone}%0ABusiness: ${biz}%0AService: ${svc}`;
+  window.open(`https://wa.me/91xxxxxxx00?text=${msg}`,'_blank');
+  btn.textContent='✅ We will contact you soon!'; btn.style.background='#16a34a';
+  setTimeout(()=>{btn.textContent='Get Free Consultation 🚀';btn.style.background='';btn.disabled=false;e.target.reset();},4000);
+}
+</script>
 </body>
 </html>
